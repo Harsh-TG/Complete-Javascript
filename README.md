@@ -30,8 +30,8 @@ Covers handling user interactions like click, mouseover, keydown, and explains e
 Introduces asynchronous programming in JS using callbacks, then moves on to Promises and error handling using then, catch.
 ## 13-JSON-LocalStorage-DOM-Date	               
 Demonstrates working with JSON data, storing and retrieving data from localStorage, and using the built-in Date() object.
-## 14-Todo-                  
-App	A mini project that integrates concepts learned above — build a dynamic To-Do List with DOM, events, and localStorage.
+## 14-Todo-App
+A mini project that integrates concepts learned above — build a dynamic To-Do List with DOM, events, and localStorage.
 
 # 🛠 Technologies Used
 HTML
