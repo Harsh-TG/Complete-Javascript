@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  <title>Document</title>
+</head>
+<body>
+    <div class="containeer">
+        <div class="box" style="background-color: chartreuse;"> Hello I am Harsh</div>
+    </div>
+    <script>
+        console.log(document.querySelector(".box"));
+       // output is:  <div class="box"> Hello I am Harsh</div>
+
+       console.log(document.querySelector(".box").innerHTML);
+       // Output is: Hello I am Harsh ,          -------> also visible tags
+
+       console.log(document.querySelector(".box").innerText);
+       // Output is: Hello I am Harsh
+
+       console.log(document.querySelector(".box").outerHTML);
+       // Output is:<div class="box"> Hello I am Harsh</div>
+
+       console.log(document.querySelector(".containeer").tagName);
+        // Output is: DIV
+        console.log(document.querySelector(".containeer").hasAttribute("script"));
+        // Output is: False
+        console.log(document.querySelector(".box").getAttribute("style"));
+        //output is: background-color: chartreuse;
+         console.log(document.querySelector(".box").setAttribute("style", "border:4px solid"));
+        //output is: background-color: chartreuse;
+
+        console.log(document.querySelector(".containeer").attributes);
+        // Output is: NamedNodeMap {0: class, class: class, length: 1}
+
+       
+    </script>
+</body>
+</html>

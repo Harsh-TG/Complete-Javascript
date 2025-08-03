@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Bubbling Demo</title>
+  <style>
+    /* Parent-most container */
+    .containeer {
+      background-color: #ec7ccb;
+      height: 70px;
+      border-radius: 6px;
+      padding: 30px;
+      margin: 4px;
+    }
+
+    /* Middle-level container */
+    .childContaineer {
+      background-color: #006aff;
+      height: 50px;
+      border-radius: 6px;
+      padding: 30px;
+      margin: 4px;
+    }
+
+    /* Innermost element (child) */
+    .child {
+      background-color: chartreuse;
+      height: 30px;
+      border-radius: 6px;
+      padding: 30px;
+      margin: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top-level parent -->
+  <div class="containeer">
+
+    <!-- Mid-level section -->
+    <section class="childContaineer">
+
+      <!-- Actual child (clicked by user) -->
+      <div class="child">
+        I am a child
+      </div>
+
+    </section>
+  </div>
+
+  <script>
+    // 🔴 This handler runs first when user clicks on the .child div
+    document.querySelector(".child").addEventListener("click", () => {
+      alert("child was clicked");
+    });
+
+    // 🟠 Then event bubbles to .childContaineer section
+    document.querySelector(".childContaineer").addEventListener("click", () => {
+      alert("childContaineer was clicked");
+    });
+
+    // 🟢 Finally event bubbles to outermost .containeer div
+    document.querySelector(".containeer").addEventListener("click", () => {
+      alert("containeer was clicked");
+    });
+  </script>
+</body>
+</html>
+
+<!-- // to stop event bubbling we used stop propogation 
+ document.querySelector(".child").addEventListener("click", (e) => {
+        e.stopPropagation();
+      alert("child was clicked");
+    });-->

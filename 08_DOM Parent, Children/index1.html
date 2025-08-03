@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Table DOM Methods</title>
+</head>
+<body>
+    <table id="myTable" border="5">
+        <caption>Student Info</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Harsh</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Hari</td>
+                <td>90</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Total Students: 2</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        const table = document.getElementById("myTable");
+
+        // 1. table.caption → Returns the <caption> element
+        console.log("Caption:", table.caption?.textContent);  // Output: "Student Info"
+
+        // 2. table.tHead → Returns the <thead> element
+        console.log("Table Head:", table.tHead);
+
+        // 3. table.tFoot → Returns the <tfoot> element
+        console.log("Table Foot:", table.tFoot);
+
+        // 4. table.tBodies → Returns a collection of <tbody> elements
+        console.log("Table Bodies:", table.tBodies);
+
+        // 5. table.rows → All <tr> in the table
+        console.log("All Rows:", table.rows);  // Includes thead, tbody, tfoot rows
+
+        // 6. Accessing a specific row
+        const secondRow = table.rows[2]; // Indexing includes <thead> row (0), so [2] = Hari row
+        console.log("Second <tbody> row:", secondRow);
+
+        // 7. row.rowIndex → Index of the row in the table
+        console.log("Row Index:", secondRow.rowIndex); // Output: 2
+
+        // 8. row.cells → All <td> or <th> in the row
+        console.log("Cells in Row 2:", secondRow.cells);
+
+        // 9. cell.cellIndex → Index of the cell in the row
+        const firstCell = secondRow.cells[0];
+        console.log("Cell Index:", firstCell.cellIndex); // Output: 0
+    </script>
+</body>
+</html>

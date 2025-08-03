@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="containeer">
+        <div class="box" style="background-color: chartreuse;">Hello I am Harsh</div>
+    </div>
+
+    <script>
+        // Step 1: Create a new <div> element
+        let div = document.createElement("div");
+        div.innerHTML = "I am a super hero";
+        div.setAttribute("class", "created");
+
+        // Step 2: Append the new div inside the .containeer as the last child
+        document.querySelector(".containeer").append(div);
+
+        // Output in DOM:
+        // <div class="containeer">
+        //   <div class="box">Hello I am Harsh</div>
+        //   <div class="created">I am a super hero</div>
+        // </div>
+
+        // ---------------------------------------
+        // 🌟 More DOM Insertion Methods:
+        // ---------------------------------------
+
+        // 🔹 node.prepend(): Inserts at the beginning of the parent node
+        let prependDiv = document.createElement("div");
+        prependDiv.innerHTML = "👋 I came first (prepend)";
+        prependDiv.style.color = "blue";
+        document.querySelector(".containeer").prepend(prependDiv);
+
+        // 🔹 node.before(): Inserts before a reference node
+        let beforeDiv = document.createElement("div");
+        beforeDiv.innerHTML = "⬆️ I am before the box";
+        beforeDiv.style.color = "green";
+        let referenceBox = document.querySelector(".box");
+        referenceBox.before(beforeDiv);
+
+        // 🔹 node.after(): Inserts after a reference node
+        let afterDiv = document.createElement("div");
+        afterDiv.innerHTML = "⬇️ I am after the box";
+        afterDiv.style.color = "red";
+        referenceBox.after(afterDiv);
+
+        // ✅ Summary of DOM now:
+        // 1. prependDiv is first child of .containeer
+        // 2. beforeDiv is before .box
+        // 3. afterDiv is after .box
+        // 4. created div is still the last child of .containeer
+    </script>
+</body>
+</html>

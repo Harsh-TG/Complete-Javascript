@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="containeer">
+        <div class="box" style="background-color: chartreuse;"> Hello I am Harsh</div>
+    </div>
+    <script>
+        let div = document.createElement("div");
+        div.innerHTML = "I am a super hero"
+        div.setAttribute("class", "created");
+        document.querySelector(".containeer").append(div);
+
+        //Step-by-Step Explanation:
+        //Step 1: let div = document.createElement("div");
+        // What it does:
+        // Creates a new empty < div > element in memory(not yet in the HTML DOM).
+
+        // At this point:
+        // div exists in memory like this:----><div></div>
+
+        //Step 2: div.innerHTML = "I am a super hero";
+        // What it does:
+        // Adds inner HTML content (i.e., the visible text or HTML) to the newly created <div>.
+
+        // Now div looks like:-----------><div>I am a super hero</div>
+
+
+        // Step 3: div.setAttribute("class", "created");
+        // What it does:
+       // Adds a class="created" attribute to the <div>. This is useful for applying CSS or selecting the element later via JS.
+
+       // Now div becomes:------><div class="created">I am a super hero</div>
+
+
+       //Step 4: document.querySelector(".containeer").append(div);
+       // What it does:
+      // Selects the existing element with class containeer in the HTML, and appends the new div as its last child.
+
+      //  This updates the live HTML DOM.------->  final output : 
+      // <div class="containeer">
+      //     <div class="box">Hello I am Harsh</div>
+      //     <div class="created">I am a super hero</div> <!-- Newly added element -->
+     // </div>
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    <title>Cricket Game</title>
+</head>
+
+<body>
+    <h1>Cricket Game To Stamp</h1>
+    <button onclick=" 
+    // console.log('You can choose Bat');
+    let randomnumber=Math.random()*3;
+    let computerchoice;
+    if(randomnumber>0 && randomnumber<1){
+        computerchoice='bat';
+        // console.log('computer choose bat '+ randomnumber);
+        
+    }
+    else if(randomnumber>1 && randomnumber<2){
+        computerchoice='ball';
+        // console.log('computer choose ball '+randomnumber);
+    }
+    else{
+        computerchoice='stamp';
+        // console.log('computer choose stamp '+randomnumber);
+
+    }
+// In place of this : console.log('computer choose stamp '+randomnumber);
+// we also do this write once after all the if else statements:
+//  console.log(`computer choose ${computerchoice}`);
+let resultmsg;
+
+    if(computerchoice==='ball'){
+       resultmsg ='user is won.';
+    }
+    else if(computerchoice==='stamp'){
+       resultmsg ='computer is  won.';
+    }
+    else if(computerchoice==='bat'){
+       resultmsg ='Game is tie.';
+    }
+    alert(`You can choose Bat, and Computer choose ${computerchoice} and ${resultmsg}`);
+    
+    
+    
+    ">Bat</button>
+    <button onclick="
+    let randomnumber1=Math.random()*3;
+    let computerchoice1;
+    if(randomnumber1>0 && randomnumber1<1){
+        computerchoice1='bat';
+    }
+    else if(randomnumber1>1 && randomnumber1<2){
+        computerchoice1='ball';
+         }
+    else{
+        computerchoice1='stamp';
+    }
+    let resultmsg1;
+
+    if(computerchoice1==='ball'){
+       resultmsg1 ='Game is Tie.';
+    }
+    else if(computerchoice1==='stamp'){
+       resultmsg1 ='computer is  won.';
+    }
+    else if(computerchoice1==='bat'){
+       resultmsg1 ='User is won.';
+    }
+    alert(`You can choose Ball, and Computer choose ${computerchoice1} and ${resultmsg1}`);
+    
+    ">Ball</button>
+    <button onclick="
+    let randomnumber2=Math.random()*3;
+    let computerchoice2;
+    if(randomnumber2>0 && randomnumber2<1){
+        computerchoice2='bat';
+    }
+    else if(randomnumber2>1 && randomnumber2<2){
+        computerchoice2='ball';
+         }
+    else{
+        computerchoice2='stamp';
+    }
+    let resultmsg2;
+
+    if(computerchoice2==='ball'){
+       resultmsg2 ='user is won.';
+    }
+    else if(computerchoice2==='stamp'){
+       resultmsg2 ='Game is tie.';
+    }
+    else if(computerchoice2==='bat'){
+       resultmsg2 ='computer is won.';
+    }
+    alert(`You can choose stamp, and Computer choose ${computerchoice2} and ${resultmsg2}`);
+    
+    ">Stamp</button>
+</body>
+
+</html>

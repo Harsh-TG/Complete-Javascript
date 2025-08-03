@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // ✅ Creating a Promise named `ticket`
+    const ticket = new Promise(function (resolve, reject) {
+      const isBoarded = false; // Change this to true to simulate a successful promise
+// If condition passes, promise is RESOLVED
+      if (isBoarded) {
+        resolve("You are in the flight"); // fulfilled state
+      } else {
+        reject("Your flight is cancelled"); // rejected state
+      }
+    });
+// ✅ Using the promise
+    ticket
+      .then((data) => {
+        // This runs if promise is fulfilled (resolve is called)
+        console.log("wahoo", data);  // Output: "wahoo You are in the flight"
+      })
+      .catch((data) => {
+        // This runs if promise is rejected (reject is called)
+        console.log("oh no", data);  // Output: "oh no Your flight is cancelled"
+      })
+      .finally(() => {
+        // This always runs regardless of success or failure
+        console.log("I will always be executed");
+      });
+      
+  </script>
+  <script src="Promises.js"></script>
+</body>
+</html>

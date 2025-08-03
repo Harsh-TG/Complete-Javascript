@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .box {
+            height: 70px;
+            width: 70px;
+            /* background-color: mediumpurple; */
+            margin: 5px;
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            border: 3px solid;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containeer">
+        <div class="box">Sitaram 1</div>
+        <div class="box">Sitaram 2</div>
+        <div class="box">Sitaram 3</div>
+        <div id="boxid" class="box">Sitaram 3.5</div>
+        <div class="box">Sitaram 4</div>
+        <div class="box">Sitaram 5</div>
+    </div>
+
+    <script>
+        let rs = document.getElementsByClassName("box");
+        console.log(rs);
+        // output is: HTMLCollection(5) [div.box, div.box, div.box, div.box, div.box]
+
+        console.log(rs[2].style.backgroundColor = "coral");
+
+        console.log(document.getElementById("boxid").style.background = "skyblue");
+
+        console.log(document.querySelector(".box").style.background = "pink");// here it only color first box , for all box we do:
+
+        // console.log(document.querySelectorAll(".box").forEach(element => {
+        //     element.style.background = "yellow";
+        //     // An arrow function is a shorter syntax for writing functions in JavaScript.
+
+        // }));
+        // // also we replace forEach by for loop other loops:
+        // let boxes = document.getElementsByClassName("box");
+        // for (let i = 0; i < boxes.length; i++) {
+        //     boxes[i].style.background = "lightgreen";
+        // }
+
+        console.log(document.getElementsByTagName("div"));
+        // Output is: HTMLCollection(7) [div.containeer, div.box, div.box, div.box, div#boxid.box, div.box, div.box, boxid: div#boxid.box]
+    </script>
+</body>
+
+</html>

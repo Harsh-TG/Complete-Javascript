@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <style>
+        body {
+            text-align: center; /* Center-align the text and buttons */
+        }
+    </style>
+    <title>Cricket Game</title>
+</head>
+
+<body>
+    <h1>Cricket Game To Stamp</h1>
+
+    <!-- Button: User chooses Bat -->
+    <button onclick="
+        generateComputerChoice(); // Call function to randomly set computerchoice
+
+        let resultmsg; // Declare a variable to store the result message
+
+        // Compare choices and decide the result
+        if(computerchoice === 'ball') {
+            resultmsg = 'user is won.'; // Bat beats ball
+        } else if(computerchoice === 'stamp') {
+            resultmsg = 'computer is  won.'; // Stamp beats bat
+        } else if(computerchoice === 'bat') {
+            resultmsg = 'Game is tie.'; // Same choice: Tie
+        }
+
+        // Show the result in an alert message
+        alert(`You chose Bat, Computer chose ${computerchoice}, and ${resultmsg}`);
+    ">Bat</button>
+
+    <!-- Button: User chooses Ball -->
+    <button onclick="
+        generateComputerChoice(); // Generate computer's move
+
+        resultmsg; // Store result
+
+        if(computerchoice === 'ball') {
+            resultmsg = 'Game is Tie.'; // Same choice: Tie
+        } else if(computerchoice === 'stamp') {
+            resultmsg = 'computer is  won.'; // Stamp beats ball
+        } else if(computerchoice === 'bat') {
+            resultmsg = 'User is won.'; // Ball beats bat
+        }
+
+        alert(`You chose Ball, Computer chose ${computerchoice}, and ${resultmsg}`);
+    ">Ball</button>
+
+    <!-- Button: User chooses Stamp -->
+    <button onclick="
+        generateComputerChoice(); // Generate computer's move
+
+        resultmsg; // Store result
+
+        if(computerchoice === 'ball') {
+            resultmsg = 'user is won.'; // Stamp beats ball
+        } else if(computerchoice === 'stamp') {
+            resultmsg = 'Game is tie.'; // Same choice: Tie
+        } else if(computerchoice === 'bat') {
+            resultmsg = 'computer is won.'; // Bat beats stamp
+        }
+
+        alert(`You chose Stamp, Computer chose ${computerchoice}, and ${resultmsg}`);
+    ">Stamp</button>
+</body>
+
+<script>
+    // Global variable to store the computer's choice
+    let computerchoice;
+
+    // Function to generate the computer's choice randomly
+    function generateComputerChoice() {
+        let randomnumber = Math.random() * 3; // Generate a random number between 0 and 3
+
+        // Assign a choice based on the random number range
+        if (randomnumber > 0 && randomnumber < 1) {
+            computerchoice = 'bat';
+        } else if (randomnumber > 1 && randomnumber < 2) {
+            computerchoice = 'ball';
+        } else {
+            computerchoice = 'stamp';
+        }
+    }
+</script>
+
+</html>

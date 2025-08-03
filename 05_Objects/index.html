@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let product = {
+            company: 'Mango',
+            price: 861,
+            item: 'T-Shirt',
+            displayPrice: function () {
+                console.log(`Price of the product is Rs ${product.price}.`);
+            }
+        };
+        console.log(typeof (product));
+        console.log(product);
+        console.log(product.price);
+        product.company = 'Orange';
+        console.log(product.company);
+
+        delete product.company;
+        console.log(product);
+        product.displayPrice();// also used this.displayPrice();
+
+        // Autoboxing --------------
+        //convert primitive to objects, it allow properties and method to be used on primitives.
+        console.log('Jai Shree Ram'.toUpperCase());
+        console.log('Jai Shree Ram'.replace('Shree Ram', 'Sita Ram').toUpperCase());
+
+        let p = {
+            pop: 'lija'
+        };
+
+        let q = { pop: 'lija' };
+        console.log(p == q);// it given False
+        console.log(p === q);// it given False
+
+        //Objects are compared by reference, not by value.
+
+        // p and q are two different objects in memory.
+
+        // Even though they look identical, they are stored at different memory addresses.
+
+        // So p === q is like asking:
+        // "Are p and q pointing to the exact same object in memory?"
+        // → Answer: No → false.
+
+    </script>
+</body>
+
+</html>

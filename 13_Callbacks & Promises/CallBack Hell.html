@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Callback Hell Example</title>
+</head>
+<body>
+  <script>
+    // Step 1: Asynchronous function to get cheese
+    function getcheese(callback) {
+      setTimeout(() => {
+        const cheese = "🧀";
+        console.log("here is cheese", cheese);
+
+        // Pass cheese to the next step using callback
+        callback(cheese);
+      }, 2000); // Simulates delay (2 seconds)
+    }
+
+    // Step 2: Use cheese to make dough
+    function makedough(cheese, callback) {
+      setTimeout(() => {
+        const dough = cheese + "🍩";
+        console.log("here is dough", dough);
+
+        // Pass dough to the next step using callback
+        callback(dough);
+      }, 2000);
+    }
+
+    // Step 3: Use dough to bake pizza
+    function bakePizza(dough, callback) {
+      setTimeout(() => {
+        const pizza = dough + "🍕";
+        console.log("here is pizza", pizza);
+
+        // Final callback with pizza
+        callback(pizza);
+      }, 2000);
+    }
+
+    // Step 4: Chain all steps using nested callbacks (Callback Hell)
+    getcheese((cheese) => {
+      // First callback → cheese is ready
+      makedough(cheese, (dough) => {
+        // Second callback → dough is ready
+        bakePizza(dough, (pizza) => {
+          // Third callback → pizza is ready
+          console.log("get my pizza", pizza);
+        });
+      });
+    });
+
+    /*
+    🧠 Summary of Execution:
+    - getcheese() is called → waits 2s → logs cheese → calls makedough
+    - makedough() waits 2s → logs dough → calls bakePizza
+    - bakePizza() waits 2s → logs pizza → calls final callback
+    */
+
+    /*
+    ⛔ This nesting of callbacks inside callbacks is known as CALLBACK HELL.
+    - It’s hard to read and maintain.
+    - It becomes worse with more async steps.
+    - Solution: Use Promises or async/await
+    */
+
+  </script>
+</body>
+</html>

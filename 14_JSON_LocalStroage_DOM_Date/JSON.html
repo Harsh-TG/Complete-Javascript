@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Define a JavaScript object named 'product' with nested properties
+        let product = {
+            name: 'T-Shirt',
+            price: 234,
+            rating: {
+                stars: 4.5,
+                noOfReviwes: 453,
+            },
+        };
+
+        // Log the original JavaScript object to the console
+        console.log(product);
+        // ➤ Output: {name: 'T-Shirt', price: 234, rating: {…}}
+
+        // Convert the JavaScript object into a JSON string using JSON.stringify
+        let str = JSON.stringify(product);
+
+        // Log the JSON string to the console
+        console.log(str);
+        // ➤ Output: '{"name":"T-Shirt","price":234,"rating":{"stars":4.5,"noOfReviwes":453}}'
+
+        // Convert the JSON string back to a JavaScript object using JSON.parse
+        let newProduct = JSON.parse(str);
+
+        // Check the type of the newly parsed object
+        console.log(typeof newProduct); 
+        // ➤ Output: "object"
+
+        // Log the new object to verify its structure
+        console.log(newProduct);
+        // ➤ Output: {name: 'T-Shirt', price: 234, rating: {…}}
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Callback Example</title>
+</head>
+<body>
+  <script>
+    // 1️⃣ Function 'calculate' accepts two numbers (a, b) and a function called 'operation'
+    const calculate = (a, b, operation) => {
+      // 2️⃣ 'operation' is called with a and b as arguments
+      return operation(a, b);
+    };
+
+    // 3️⃣ We call 'calculate' with values 3, 4 and a function that adds them
+    const result = calculate(3, 4, function (num1, num2) {
+      // 4️⃣ This anonymous function acts as a 'callback' and returns sum
+      return num1 + num2;
+    });
+
+    // 5️⃣ Output the result: 3 + 4 = 7
+    console.log(result); // 👉 7
+  </script>
+</body>
+</html>

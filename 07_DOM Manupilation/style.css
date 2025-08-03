@@ -1,0 +1,28 @@
+/* Container Styling */
+.containeer {
+    height: 100px;
+    width: 330px;
+    border: 3px solid;
+    display: flex;
+    justify-content: center;  /* Horizontally center items */
+    align-items: center;      /* Vertically center items */
+}
+
+/* Box Styling */
+.box {
+    height: 60px;
+    width: 60px;
+    border: 4px solid black;   /* Corrected 'black' border */
+    border-radius: 6px;
+    background-color: blueviolet;
+    margin: 4px;
+    padding: 5px;
+    text-align: center;
+    color: white;
+}
+
+/* Class to round border */
+.round-border {
+    border-radius: 50%;
+    border: 5px solid black;   /* Corrected spelling 'solid' */
+}

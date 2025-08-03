@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Define a product object with nested properties
+        let product = {
+            name: 'T-Shirt',
+            price: 234,
+            rating: {
+                stars: 4.5,
+                noOfReviwes: 453,
+            },
+        };
+
+        // --- localStorage basic string operations ---
+
+        // Uncomment the lines below to store string key-value pairs in localStorage
+
+        // localStorage.setItem('Name', 'Sitaram');
+        // localStorage.setItem('Names', 'Hanuman');
+
+        // Retrieve and print stored string values from localStorage
+        console.log(localStorage.getItem('Name'));   // ➤ Output: "Sitaram" (if stored)
+        console.log(localStorage.getItem('Names'));  // ➤ Output: "Hanuman" (if stored)
+
+        // ------------------------------------------
+        // Explanation:
+        // 1. localStorage.setItem('Name', 'Sitaram');
+        //    ➤ Stores a key-value pair: Key = 'Name', Value = 'Sitaram'
+        //
+        // 2. localStorage.setItem('Names', 'Hanuman');
+        //    ➤ Stores another pair: Key = 'Names', Value = 'Hanuman'
+        //
+        // 3. localStorage.getItem('Name');
+        //    ➤ Retrieves the value of 'Name' (if it exists), else returns null
+        //
+        // 4. localStorage.getItem('Names');
+        //    ➤ Retrieves the value of 'Names' (if it exists), else returns null
+        //
+        // Note: These are stored as strings and persist even after page reload.
+
+        // --- Store a JavaScript object in localStorage ---
+
+        // localStorage can only store strings, so we convert the object to a string using JSON.stringify
+        localStorage.setItem('product', JSON.stringify(product));
+
+        // Log the stored product string from localStorage
+        console.log(localStorage.getItem('product'));
+        // ➤ Output: {"name":"T-Shirt","price":234,"rating":{"stars":4.5,"noOfReviwes":453}}
+
+        // --- Convert the stored string back to an object ---
+
+        // Use JSON.parse to convert the string back to an object
+        let product2 = JSON.parse(localStorage.getItem('product'));
+
+        // Log the parsed object
+        console.log(product2);
+        // ➤ Output: {name: 'T-Shirt', price: 234, rating: {…}}
+
+        // --- Remove an individual item from localStorage ---
+
+        localStorage.removeItem('price'); 
+        // ➤ This won't work as expected because 'price' is not a key in localStorage.
+        // ➤ Only top-level keys (like 'product') can be removed.
+        // ➤ To remove price from product object, you'd need to modify the object and re-save.
+
+        // --- Clear all localStorage data ---
+
+        localStorage.clear();
+        // ➤ This removes ALL data stored in localStorage for this domain
+        // ➤ Use with caution, especially when other parts of your app depend on stored data.
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let product = {
+            size: 'S',
+            name: 'Jeans',
+            fit: 'Slim-Fit',
+            //bracket notation
+            'delivery-time': 'Same day Delivery',
+        };
+
+        let copyProduct = product; //performing reference
+        console.log(product);
+        copyProduct.size = 'M';
+        console.log(product);
+
+        copyProduct.fit = 'Regular-Fit';
+        console.log(product);
+
+        console.log(product['delivery-time']);// do not access with dot notation
+
+        let obj = {
+            message: 'Good Job',
+            status: 'Complete',
+        };
+
+        console.log(obj);
+        let { message, status } = obj;
+        console.log(message);
+        console.log(status);
+
+        //
+        function isIdenticalProduct(Product1, Product2) {
+            if (typeof Product1 !== 'object' && typeof Product2 !== 'object') {
+                console.warn('Parmeter passed was not an object');
+                return false;
+            }
+
+            if (Product1 === Product2) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        let Product1 = {
+            size: 'S',
+            name: 'Jeans',
+            fit: 'Slim-Fit',
+
+        };
+
+        let Product2 = {
+            size: 'S',
+            name: 'Jeans',
+            fit: 'Slim-Fit',
+
+        };
+
+        console.log(isIdenticalProduct(Product1, ''));
+        console.log(isIdenticalProduct(Product1, Product2));
+        //returns false because in JavaScript, objects are compared by reference, not by their content.
+        //Even if Product1 and Product2 have the same key-value pairs, they are stored in different 
+        // memory locations, so Product1 === Product2 is false.
+
+        console.log(isIdenticalProduct(Product1, product));
+        console.log(isIdenticalProduct(Product2, Product1));
+
+        //To compare objects by their values, not by reference, use this function:
+        function areEqualObjects(obj1, obj2) {
+            return JSON.stringify(obj1) === JSON.stringify(obj2);
+        }
+
+        console.log(areEqualObjects(Product1, Product2)); // ✅ true
+
+
+
+    </script>
+</body>
+
+</html>

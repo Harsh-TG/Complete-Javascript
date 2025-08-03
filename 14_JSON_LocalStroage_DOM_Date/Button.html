@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Style for the button */
+        #my-button {
+            height: 50px;
+            width: 50px;
+            border-radius: 6px;
+            font-size: 25px;
+        }
+
+        /* Class for odd number clicks: black background and white text */
+        .js-odd {
+            background-color: black;
+            color: white;
+        }
+
+        /* Class for even number clicks: white background and black text */
+        .js-even {
+            background-color: white;
+            color: black;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- A button that will display the number of times it has been clicked -->
+    <button id="my-button" onclick="buttonPressed();">0</button>
+
+    <script>
+        // Get the number of times the button was clicked from localStorage
+        // If not found, default to 0
+        let noOfTimesClicked = parseInt(localStorage.getItem('noOfTimesClicked')) || 0;
+
+        // Function to update button text and style based on the number of clicks
+        function updateButton() {
+            // Select the button element from the DOM
+            let button = document.querySelector('#my-button');
+
+            // Set the button text to the current number of clicks
+            button.innerText = noOfTimesClicked;
+
+            // If number of clicks is even, apply 'js-even' class and remove 'js-odd'
+            if (noOfTimesClicked % 2 === 0) {
+                button.classList.remove('js-odd');
+                button.classList.add('js-even');
+            } 
+            // If number of clicks is odd, apply 'js-odd' class and remove 'js-even'
+            else {
+                button.classList.remove('js-even');
+                button.classList.add('js-odd');
+            }
+        }
+
+        // Function that runs each time the button is pressed
+        function buttonPressed() {
+            // Increment the click count
+            noOfTimesClicked++;
+
+            // Save the updated click count to localStorage
+            localStorage.setItem('noOfTimesClicked', noOfTimesClicked); // Key name must match the one used in getItem
+
+            // Update the button display and style
+            updateButton();
+        }
+
+        // Call the update function once when the page loads
+        // This ensures the button reflects stored click count and style
+        updateButton();
+    </script>
+</body>
+</html>

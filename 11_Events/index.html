@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+       .containeer {
+    display: flex;
+    gap: 20px; /* Space between box-button pairs */
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-group {
+    display: flex;
+    flex-direction: column; /* Stack box and button vertically */
+    align-items: center;     /* Center items horizontally */
+}
+
+.box {
+    height: 80px;
+    width: 80px;
+    border-radius: 6px;
+    background-color: darksalmon;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn {
+    margin-top: 8px;
+    height: 30px;
+    width: 120px;
+    border-radius: 4px;
+    font-weight: bold;
+   
+}
+
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+   <div class="containeer">
+  <div class="box-group">
+    <div class="box box1">yes I am a box1</div>
+    <button id="btn1" class="btn">Click Me</button>
+  </div>
+  <div class="box-group">
+    <div class="box box2">yes I am a box2</div>
+    <button id="btn2" class="btn">Hover Over Me</button>
+  </div>
+  <div class="box-group">
+    <div class="box box3">yes I am a box3</div>
+    <button id="btn3" class="btn">Double Click Me</button>
+  </div>
+  <div class="box-group">
+    <div class="box box4">yes I am a box4</div>
+    <button id="btn4" class="btn">Mouse Out</button>
+  </div>
+</div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

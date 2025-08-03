@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <!-- A div to display the greeting -->
+    <div id="greeting"></div>
+
+    <script>
+        // Function to greet someone based on the current time
+        // Default name is 'Ram' if no argument is passed
+        function doGreeting(Name = 'Ram') {
+            // Create a Date object to get current time
+            let date = new Date();
+
+            // Get the current hour (0 to 23)
+            let hours = date.getHours();
+
+            // Select the <div> element with id "greeting"
+            let heading = document.querySelector('#greeting');
+
+            // Log the hour in console (for debugging)
+            console.log(hours);
+
+            // If time is between 6 AM and 11:59 AM
+            if (hours > 5 && hours < 12) {
+                heading.innerText = `Good Morning ${Name}`;
+            }
+            // If time is between 12:01 PM and 5:59 PM
+            else if (hours > 12 && hours < 18) {
+                heading.innerText = `Good Afternoon ${Name}`;
+            }
+            // For all other times (Evening, Night, Early Morning)
+            else {
+                heading.innerText = `Good Night ${Name}`;
+            }
+        }
+
+        // Call the function with the name "Sitaji"
+        doGreeting('Sitaji');
+    </script>
+</body>
+</html>

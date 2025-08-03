@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<style>
+    .Box{
+        height: 50px;
+        width: 50px;
+        background-color: cornflowerblue;
+        margin: 6px;
+        padding: 4px;
+        text-align: center;
+        border-radius: 6px;
+      
+    }
+</style>
+    <title>DoM Parent</title>
+
+</head>
+
+<body>
+    <div class="containeer">
+        <div class="Box">Box1</div>
+        <div class="Box">Box2</div>
+        <div class="Box">Box3</div>
+        <div class="Box">Box4</div>
+    </div>
+    <script>
+        console.log(document.body.childNodes);
+        //output is: NodeList(4) [text, div.containeer, text, script]
+
+        console.log(document.body.childNodes[1].childNodes);
+        // output is: NodeList(9) [text, div.Box, text, div.Box, text, div.Box, text, div.Box, text]
+        
+        let cont=document.body.childNodes[1];
+        console.log(cont.lastElementChild);
+        // Output is: <div class="Box">Box4</div>
+
+        console.log(cont.lastChild);
+          // Output is: text
+
+        cont.firstElementChild.style.color = "red";
+        cont.lastElementChild.style.backgroundColor = "coral";
+
+        // to find the parent node of any childnode:
+         console.log(cont.lastElementChild.parentElement);
+         // Output is:  <div class="containeer">
+
+        console.log(document.body.firstElementChild.children);
+        // Output is: HTMLCollection(4) [div.Box, div.Box, div.Box, div.Box]
+
+        console.log(document.body.firstElementChild.children[2].nextElementSibling);
+        // Output is:  <div class="Box" style ="backgroundColor :coral;">Box4</div>
+
+        console.log(document.body.firstElementChild.children[2].previousElementSibling);
+         // Output is: <div class="Box">Box3</div>
+
+    </script>
+</body> 
+
+</html>

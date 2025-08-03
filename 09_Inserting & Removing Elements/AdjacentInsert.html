@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .box1{
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="containeer red">
+        <div class="box1">Hello</div>
+        <div class="box1">Hello ji</div>
+    </div>
+    <script>
+        let cont= document.querySelector(".containeer");
+        // cont.insertAdjacentHTML("afterend","<b>I am your boyfriend </b>");
+        //what here do: Inserts the <b> element outside and after the .containeer <div>.
+
+        // cont.insertAdjacentHTML("afterbegin","<b>I am your boyfriend </b>");
+        // what here do: Inserts the <b> element inside .containeer, as the first child.
+
+        // cont.insertAdjacentHTML("beforeend","<b>I am your boyfriend </b>");
+          // what here do: Inserts the <b> element inside .containeer, as the last child.
+
+        cont.insertAdjacentHTML("beforebegin","<b>I am your boyfriend </b>");
+        // what here do: Inserts the <b> element outside and before the .containeer <div>.
+        
+
+         // to get all classes of a containeer:
+         console.log(document.querySelector(".containeer").classList);  
+         // output is: DOMTokenList(2) ['containeer', 'red', value: 'containeer red']
+
+         console.log(document.querySelector(".containeer").className);  
+         // output is: containeer red
+         
+         
+          console.log(document.querySelector(".containeer").classList.add("Ramji"));  
+         // output is: containeer red Ramji
+
+          console.log(document.querySelector(".containeer").classList.remove("red"));  
+         // output is: undefined --------> that means it is remove 'red' class inside the containeer
+
+          console.log(document.querySelector(".containeer").classList.toggle("box1"));  
+         // output is: true , after toggle it became false, similarly true---> false---->true...
+
+         
+         
+
+    // </script>
+</body>
+</html>

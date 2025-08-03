@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function oddEven(num) {
+            if (num % 2 === 0) {
+                console.log('Number is even');
+            }
+            else {
+                console.log('Number is odd');
+            }
+        }
+        function largeNumber(a, b) {
+            if (a > b) {
+                // return 'a is large number';
+                console.log('a is large number');
+            }
+            else {
+                // return 'b is large number';
+                console.log('b is large number');
+            }
+        }
+        function convertCelsiusToFahrenheit(C) {
+            let F = (9 / 5) * C + 32;
+            console.log(`${C}°C is equal to ${F}°F`);
+        }
+
+
+        oddEven(2);
+        largeNumber(4, 5);
+        convertCelsiusToFahrenheit(25);
+    </script>
+</body>
+
+</html>
